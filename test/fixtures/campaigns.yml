@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_time: 2016-11-17 11:27:26
+  servable: false
+  daily_budget_amount_local_micro: 1
+  end_time: 2016-11-17 11:27:26
+  standard_delivery: false
+  total_budget_amount_local_micro: 1
+  entity_status: MyString
+  paused: false
+  currency: MyString
+  deleted: false
+  duration_in_days: 1
+
+two:
+  name: MyString
+  start_time: 2016-11-17 11:27:26
+  servable: false
+  daily_budget_amount_local_micro: 1
+  end_time: 2016-11-17 11:27:26
+  standard_delivery: false
+  total_budget_amount_local_micro: 1
+  entity_status: MyString
+  paused: false
+  currency: MyString
+  deleted: false
+  duration_in_days: 1

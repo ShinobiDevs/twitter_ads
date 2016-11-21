@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  country_code: MyString
+  location_type: MyString
+  targeting_value: MyString
+  targeting_type: MyString
+
+two:
+  name: MyString
+  country_code: MyString
+  location_type: MyString
+  targeting_value: MyString
+  targeting_type: MyString

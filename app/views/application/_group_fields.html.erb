@@ -1,0 +1,121 @@
+
+<% if not (@account.instance_of? TwitterAds::Forbidden) %>
+<!-- To get app names and app ids, 'GET accounts/:account_id/app_lists' -->
+<div class="col-xs-12">
+	<h3>app name & app id</h3>
+	<p>To get app names and app ids, 'GET accounts/:account_id/app_lists'</p>
+	<div>
+		<%= @data['app_names_ids'] %>
+	</div>
+</div>
+
+
+<!-- To get APP platform & retargeting, 'GET accounts/:account_id/app_event_tags' -->
+<div class="col-xs-12">
+	<h3>Platform</h3>
+	<p>To get APP platform &amp; retargeting, 'GET accounts/:account_id/app_event_tags'</p>
+	<table class="table table-striped">
+	  <tr>
+	    <th class="text-primary col-xs-3">id</th>
+	    <th class="text-primary col-xs-4">app_store_identifier</th>
+	    <th class="text-primary col-xs-2">os_type</th>
+	    <th class="text-primary col-xs-2">retargeting_enabled</th>
+	  </tr>
+	  <% json_data = JSON.parse(@data['app_platform_retargetting']) if @data['app_platform_retargetting'].instance_of? String %>
+	  <% if json_data.present? && json_data['data'].present? %>
+		  <% json_data['data'].each do |app| %>
+		    <tr>
+		      <td class="col-xs-3"><%= app['id'] %></td>
+		      <td class="col-xs-4"><%= app['app_store_identifier'] %></td>
+		      <td class="col-xs-2"><%= app['os_type'] %></td>
+		      <td class="col-xs-2"><%= app['retargeting_enabled'] %></td>
+		    </tr>
+		  <% end %>
+	  <% end %>
+	</table>
+</div>
+
+<!-- To get campaign information, 'GET accounts/:account_id/campaigns' -->
+<div class="col-xs-12">
+	<h3>campaign_id and campaign_name</h3>
+	<p>To get campaign information, 'GET accounts/:account_id/campaigns'</p>
+	<table class="table table-striped">
+	  <tr>
+	    <th class="text-primary col-xs-4">id</th>
+	    <th class="text-primary col-xs-8">name</th>
+	  </tr>
+	 
+	  <% if not (@data['campaign'].instance_of? TwitterAds::Forbidden) %>
+		  <% @data['campaign'].each do |campaign| %>
+		    <tr>
+		      <td class="col-xs-4"><%= campaign.id %></td>
+		      <td class="col-xs-8"><%= campaign.name %></td>
+		    </tr>
+		  <% end %>
+	  <% end %>
+	</table>
+</div>
+
+<!-- To get line item id and name, 'accounts/:account_id/line_items?campaign_ids=' -->
+<div class="col-xs-12">
+	<h3>line item id and name</h3>
+	<p>To get line item id and name, 'accounts/:account_id/line_items?campaign_ids='</p>
+	<table class="table table-striped">
+	  <tr>
+	    <th class="text-primary col-xs-3">campaign_id</th>
+	    <th class="text-primary col-xs-3">line item id</th>
+	    <th class="text-primary col-xs-6">line item name</th>
+	  </tr>
+	 
+	  <% if not (@data['campaign'].instance_of? TwitterAds::Forbidden) %>
+		  <% @data['campaign'].each do |campaign| %>
+		    <% @account.line_items(nil, params: { campaign_id: campaign.id }).each do |line_item| %>
+		    	<tr>
+			      <td class="col-xs-3"><%= campaign.id %></td>
+			      <td class="col-xs-3"><%= line_item.id %></td>
+			      <td class="col-xs-6"><%= line_item.name %></td>
+			    </tr>
+		    <% end %>
+		  <% end %>
+	  <% end %>
+	</table>
+</div>
+
+<!-- Metrics -->
+<div class="col-xs-12">
+	<h3>Metrics</h3>
+	<% if not (@metrics.instance_of? TwitterAds::Forbidden) %>
+		<% @metrics.each do |m| %>
+			
+			<div><%= m[:id] + '---'  + (m[:id_data][0][:metrics][:impressions].nil? ? m[:id_data][0][:metrics][:impressions].to_s : m[:id_data][0][:metrics][:impressions].count.to_s) + '---' + m[:id_data][0][:metrics][:clicks].to_s + m[:id_data][0][:metrics][:billed_charge_local_micro].to_s %></div>
+		<% end %>
+	<% end %>
+</div>
+
+<% else %>
+<div class="col-xs-12"><%= @ex %></div>
+<% end %>
+
+<% if @cursor.present? && @cursor.count > 0 %>
+<div class="col-xs-12">
+	<h3>Country</h3>
+	<p>To get country, 'GET targeting_criteria/locations?location_type=CITY'</p>
+
+	<table class="table table-striped">
+	  <tr>
+	    <th class="text-primary col-xs-8">name</th>
+	    <th class="text-primary col-xs-4">country_code</th>
+	  </tr>
+	 
+  
+	  <% @cursor.each do |item| %>
+	  	<% puts item.to_json %>
+	    <tr>
+	      <td class="col-xs-8"><%= item[:name] %></td>
+	      <td class="col-xs-4"><%= item[:country_code] %></td>
+	    </tr>
+	  <% end %>
+	  
+	</table>	
+</div>
+<% end %>

@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bid_type: MyString
+  advertiser_user_id: 1
+  name: MyString
+  placements: MyText
+  start_time: 2016-11-17 12:47:15
+  bid_amount_local_micro: 1
+  automatically_select_bid: false
+  advertiser_domain: MyString
+  target_cpa_local_micro: 1
+  primary_web_event_tag: MyString
+  charge_by: MyString
+  product_type: MyString
+  end_time: 2016-11-17 12:47:15
+  bid_unit: MyString
+  total_budget_amount_local_micro: 1
+  objective: MyString
+  entity_status: MyString
+  paused: false
+  optimization: MyString
+  categories: MyText
+  currency: MyString
+  tracking_tags: MyText
+  include_sentiment: MyString
+  creative_source: MyString
+  deleted: false
+
+two:
+  bid_type: MyString
+  advertiser_user_id: 1
+  name: MyString
+  placements: MyText
+  start_time: 2016-11-17 12:47:15
+  bid_amount_local_micro: 1
+  automatically_select_bid: false
+  advertiser_domain: MyString
+  target_cpa_local_micro: 1
+  primary_web_event_tag: MyString
+  charge_by: MyString
+  product_type: MyString
+  end_time: 2016-11-17 12:47:15
+  bid_unit: MyString
+  total_budget_amount_local_micro: 1
+  objective: MyString
+  entity_status: MyString
+  paused: false
+  optimization: MyString
+  categories: MyText
+  currency: MyString
+  tracking_tags: MyText
+  include_sentiment: MyString
+  creative_source: MyString
+  deleted: false

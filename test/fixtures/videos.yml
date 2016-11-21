@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tweeted: false
+  ready_to_tweet: false
+  duration: 1
+  description: MyText
+  preview_url: MyString
+  v_id: MyString
+  c_time: 2016-11-18 13:19:22
+  u_time: 2016-11-18 13:19:22
+  title: MyString
+  deleted: MyString
+  acc_id: MyString
+
+two:
+  tweeted: false
+  ready_to_tweet: false
+  duration: 1
+  description: MyText
+  preview_url: MyString
+  v_id: MyString
+  c_time: 2016-11-18 13:19:22
+  u_time: 2016-11-18 13:19:22
+  title: MyString
+  deleted: MyString
+  acc_id: MyString

@@ -1,0 +1,2 @@
+class PromotableUser < ApplicationRecord
+end

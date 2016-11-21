@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  acc_id: MyString
+  c_time: 2016-11-18 14:34:08
+  u_time: 2016-11-18 14:34:08
+  deleted: false
+  puser_id: MyString
+  promotable_user_type: MyString
+  user_id: MyString
+
+two:
+  acc_id: MyString
+  c_time: 2016-11-18 14:34:08
+  u_time: 2016-11-18 14:34:08
+  deleted: false
+  puser_id: MyString
+  promotable_user_type: MyString
+  user_id: MyString

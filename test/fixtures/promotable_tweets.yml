@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tweet_id: MyString
+  c_time: 2016-11-18 14:32:38
+  u_time: 2016-11-18 14:32:38
+  deleted: false
+  ptweet_id: MyString
+  paused: false
+  approval_status: MyString
+  line_id: MyString
+  acc_id: MyString
+
+two:
+  tweet_id: MyString
+  c_time: 2016-11-18 14:32:38
+  u_time: 2016-11-18 14:32:38
+  deleted: false
+  ptweet_id: MyString
+  paused: false
+  approval_status: MyString
+  line_id: MyString
+  acc_id: MyString

@@ -1,0 +1,28 @@
+<div class="container">
+	<h1>Twitter Ads API</h1>
+	<div class="row">
+		<div class="col-xs-12 col-md-6">
+		<%= select_tag :account_id, options_for_select(@accounts.map{ |a| [a.name, a.id] }, :selected => @account.id), {:class => 'form-control'} %>
+		</div>
+	</div>
+	<div class="row examples">
+		<%= render partial: "group_fields", locals: {account: @data} %>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#account_id').on('change', function(){
+			$.ajax({
+	            url: '/account?id=' + $(this).val(),
+	            dataType: 'html',
+	            success: function(html) {
+	                $('.examples').html(html);
+	            },
+	            error: function(e) {
+	                console.log(e);
+	            }
+	        });
+		});
+	});
+</script>

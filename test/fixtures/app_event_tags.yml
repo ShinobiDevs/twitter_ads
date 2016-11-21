@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  app_tag_id: MyString
+  app_store_identifier: MyString
+  os_type: MyString
+  conversion_type: MyString
+  provider_app_event_id: MyString
+  provider_app_event_name: MyString
+  post_engagement_attribution_window: MyString
+  post_view_attribution_window: MyString
+  c_time: 2016-11-17 22:07:42
+  u_time: 2016-11-17 22:07:42
+  deleted: false
+
+two:
+  app_tag_id: MyString
+  app_store_identifier: MyString
+  os_type: MyString
+  conversion_type: MyString
+  provider_app_event_id: MyString
+  provider_app_event_name: MyString
+  post_engagement_attribution_window: MyString
+  post_view_attribution_window: MyString
+  c_time: 2016-11-17 22:07:42
+  u_time: 2016-11-17 22:07:42
+  deleted: false

@@ -1,0 +1,2 @@
+class PromotableTweet < ApplicationRecord
+end
